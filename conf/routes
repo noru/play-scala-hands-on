@@ -4,6 +4,8 @@
 
 # Home page
 GET        /                                        controllers.Application.index
+GET        /cache/:key                              controllers.Application.getCache(key)
+GET        /setcache/:value                              controllers.Application.setCache(value)
 GET        /mysql                                   controllers.Application.mysql
 #GET     /api/:item                  controllers.Application.api(item)
 

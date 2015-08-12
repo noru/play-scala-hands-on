@@ -9,3 +9,6 @@ target
 
 project/target
 project/project
+activator.properties
+play2_4_3.iml
+tutorial

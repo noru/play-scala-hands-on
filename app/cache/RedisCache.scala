@@ -1,6 +1,7 @@
 package cache
 
 import com.redis._
+import com.redis.serialization.Parse
 
 object RedisCache {
 
@@ -9,8 +10,8 @@ object RedisCache {
     def apply(key: String, value: Any):Unit = {
         redisClient.set(key, value);
     }
-    def apply(key:String):Any = {
-        redisClient.get(key)
+    def apply[T](key:String)(implicit parse: Parse[T]):Option[T] = {
+        redisClient.get[T](key)
     }
 
 }
