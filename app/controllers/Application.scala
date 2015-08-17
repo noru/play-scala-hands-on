@@ -29,4 +29,8 @@ class Application @Inject()(CandidatesDao : CandidatesDAO) extends BaseControlle
         CandidatesDao.all().map{case candidates => Ok(candidates.map(_.value).toList.mkString(", "))}
     }
 
+    def test = Action {
+        Ok(play.api.Play.configuration.getIntList("test.c").get.get(1).toString)
+    }
+
 }

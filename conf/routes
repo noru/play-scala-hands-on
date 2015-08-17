@@ -5,8 +5,9 @@
 # Home page
 GET        /                                        controllers.Application.index
 GET        /cache/:key                              controllers.Application.getCache(key)
-GET        /setcache/:value                              controllers.Application.setCache(value)
+GET        /setcache/:value                         controllers.Application.setCache(value)
 GET        /mysql                                   controllers.Application.mysql
+GET        /test                                    controllers.Application.test
 #GET     /api/:item                  controllers.Application.api(item)
 
 GET        /Candidates                              controllers.CandidatesController.all

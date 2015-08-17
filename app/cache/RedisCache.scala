@@ -1,3 +1,9 @@
+/*
+* Sample of using Redis
+*
+* Wrap up a singleton as a cache api, to compare with the Play cache api
+*/
+
 package cache
 
 import com.redis._
