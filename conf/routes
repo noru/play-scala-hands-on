@@ -2,17 +2,21 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+# Health page
+GET        /                        controllers.Health.index
+GET        /health                  controllers.Health.detail
+
+# Authentication
+GET        /login                   controllers.Authenticate.login
+
 # Home page
-GET        /                                        controllers.Application.index
-GET        /cache/:key                              controllers.Application.getCache(key)
-GET        /setcache/:value                         controllers.Application.setCache(value)
-GET        /mysql                                   controllers.Application.mysql
-GET        /test                                    controllers.Application.test
-#GET     /api/:item                  controllers.Application.api(item)
+GET        /auth                    controllers.Application.index
+GET        /cache/:key              controllers.Application.getCache(key)
+GET        /setCache/:value         controllers.Application.setCache(value)
+GET        /mysql                   controllers.Application.mysql
+GET        /test                    controllers.Application.test
 
-GET        /Candidates                              controllers.CandidatesController.all
-GET        /Candidates/:id                          controllers.CandidatesController.getById(id:Int)
-PUT        /Candidates/:name                        controllers.CandidatesController.insert(name)
+GET        /Candidates              controllers.CandidatesController.all
+GET        /Candidates/:id          controllers.CandidatesController.getById(id:Int)
+PUT        /Candidates/:name        controllers.CandidatesController.insert(name)
 
-# Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file          controllers.Assets.versioned(path="/public", file: Asset)
